@@ -1,0 +1,46 @@
+{
+    "manifest_version": 3,
+    "name": "EasyEDA2KiCad Chrome Extension",
+    "version": "1.0",
+    "description": "Export parts from JLCPCB and LCSC directly to KiCad via easyeda2kicad.",
+    "icons": {
+        "16": "icon/16.png",
+        "32": "icon/32.png",
+        "48": "icon/48.png",
+        "128": "icon/128.png"
+    },
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting"
+    ],
+    "host_permissions": [
+        "https://jlcpcb.com/*",
+        "https://*.lcsc.com/*",
+        "http://127.0.0.1:5000/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icon/16.png",
+            "32": "icon/32.png",
+            "48": "icon/48.png",
+            "128": "icon/128.png"
+        }
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://jlcpcb.com/*",
+                "https://*.lcsc.com/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
