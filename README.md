@@ -2,7 +2,7 @@
 
 **JLCPCB** や **LCSC** のパーツページから、電子部品を直接 **KiCad** ライブラリ（シンボル、フットプリント、3Dモデル）にエクスポートするChrome拡張機能です。
 
-このプロジェクトは [uPesy/easyeda2kicad.py](https://github.com/uPesy/easyeda2kicad.py) をベースにした強化版です。Chrome 拡張機能とローカルサーバーの連携で、部品検索からKiCadライブラリへの反映までが最短で行えます。
+このプロジェクトは [uPesy/easyeda2kicad.py](https://github.com/uPesy/easyeda2kicad.py) をベースにしています。Chrome 拡張機能とローカルサーバーの連携で、部品検索からKiCadライブラリへの反映までが最短で行えます。
 
 ![JLCPCB Page](ressources/jlc_detail.png)
 ![Exporting PopUp](ressources/exporting_popup.png)
@@ -26,7 +26,7 @@
 1. Chrome拡張機能のアイコンをクリックし、設定を開きます。
 2. 設定画面の「Output Directory」に、出力パスとライブラリ名を設定します。
 3. KiCad のパス設定で、出力パスとライブラリ名を追加します。フォルダを選択した後、最後に¥記号を追加するのを忘れないでください。
-4. EasyEDA2KiCad_Server.exe を実行し、何でも構わないので、使う予定のアイテムを1つだけエクスポートします。ライブラリが新規作成されます。
+4. 何でも構わないので、使う予定のアイテムを1つだけエクスポートします。ライブラリが新規作成されます。
     - [JLCPCB](https://jlcpcb.com/) または [LCSC](https://www.lcsc.com/) の製品詳細ページを開くと、**Export to KiCad** ボタンが表示されます。
     - 検索結果ページでは、各パーツ番号の横にダウンロードアイコン（⬇）が表示されます。
 5. シンボルエディタのライブラリ設定でシンボルライブラリ(.kicad_sym)を登録します(グローバルでもプロジェクトでも構いません)。
@@ -49,9 +49,11 @@
 
 ---
 
+# EasyEDA2KiCad Chrome Extension
+
 A Chrome extension to directly export electronic components from **JLCPCB** and **LCSC** to **KiCad** libraries (Symbol, Footprint, 3D Model).
 
-This project is an enhanced edition based on the original [uPesy/easyeda2kicad.py](https://github.com/uPesy/easyeda2kicad.py). The collaboration between the Chrome Extension and the local server allows for the fastest workflow from part search to KiCad library reflection.
+This project is based on the original [uPesy/easyeda2kicad.py](https://github.com/uPesy/easyeda2kicad.py). The collaboration between the Chrome Extension and the local server allows for the fastest workflow from part search to KiCad library reflection.
 
 ---
 
@@ -62,12 +64,17 @@ This project is an enhanced edition based on the original [uPesy/easyeda2kicad.p
 2. Run the downloaded EXE file (you may need to allow access if prompted by security warnings).
 3. When the server starts, a terminal (black screen) will appear. Do not close this window while you are adding components to your library.
 
+### 2. Chrome Extension
+1. Open `chrome://extensions` in the Chrome browser.
+2. Enable "Developer mode" in the top right corner.
+3. Click "Load unpacked" and select the `chrome_extension` folder in this repository.
+
 ### 3. KiCad Configuration
 This step is essential because 3D model paths are set via environment variables. It's best to export one model first and check its properties to understand how it works.
 1. Click the Chrome Extension icon and open the settings.
 2. Set the "Output Directory" and "Library Name" in the settings screen.
 3. In KiCad's Path configuration, add the output path and library name. After selecting the folder, don't forget to add a backslash (`\`) at the end.
-4. Launch EasyEDA2KiCad_Server.exe. Export any item you plan to use; this will create a new library.
+4. Export any item you plan to use; this will create a new library.
     - Open a product detail page on [JLCPCB](https://jlcpcb.com/) or [LCSC](https://www.lcsc.com/), and an **Export to KiCad** button will appear.
     - On search result pages, download icons (⬇) will appear next to each part number.
 5. Register the symbol library (`.kicad_sym`) in the Symbol Editor's library settings (either Global or Project).
