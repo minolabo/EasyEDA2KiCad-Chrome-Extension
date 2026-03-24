@@ -11,7 +11,7 @@
 
 ## インストール方法
 
-### 1. 変換サーバー（ローカル）
+### 1. ローカルサーバー
 1. [リリーズページ](https://github.com/minolabo/EasyEDA2KiCad-Chrome-Extension/releases)から最新の `EasyEDA2KiCad_Server.exe` をダウンロードします。
 2. ダウンロードした EXE ファイルを実行します（セキュリティ警告が表示された場合はアクセスを許可してください）。
 3. サーバーが起動すると、黒い画面が表示されます。ライブラリに部品を追加する作業中はこの画面を閉じないでください。
@@ -26,20 +26,11 @@
 1. Chrome拡張機能のアイコンをクリックし、設定を開きます。
 2. 設定画面の「Output Directory」に、出力パスとライブラリ名を設定します。
 3. KiCad のパス設定で、出力パスとライブラリ名を追加します。フォルダを選択した後、最後に¥記号を追加するのを忘れないでください。
-4. 何でも構わないので、使う予定のアイテムを1つだけエクスポートすると、ライブラリが新規作成されます。
-5. シンボルエディタのライブラリ設定でシンボルライブラリ(.kicad_sym)を登録します(グローバルでもプロジェクトでも構いません)。
-6. フットプリントエディタのライブラリ設定でフットプリントライブラリ(.pretty)を登録します(同上)。3Dモデルは3のパス設定が正しければ、自動で表示されます。
-
----
-
-## 使い方
-
-1. **サーバーを起動**: `EasyEDA2KiCad_Server.exe` を実行します。
-2. **設定**: 拡張機能のアイコンをクリックし、エクスポート先のディレクトリ（Output Directory）、ライブラリ名を設定します。尚、既存のディレクトリに存在する同一ライブラリ名を設定すると、既存ライブラリに部品が追加されます。
-3. **部品をエクスポート**:
+4. EasyEDA2KiCad_Server.exe を実行し、何でも構わないので、使う予定のアイテムを1つだけエクスポートします。ライブラリが新規作成されます。
     - [JLCPCB](https://jlcpcb.com/) または [LCSC](https://www.lcsc.com/) の製品詳細ページを開くと、**Export to KiCad** ボタンが表示されます。
     - 検索結果ページでは、各パーツ番号の横にダウンロードアイコン（⬇）が表示されます。
-4. **ライブラリの更新**:ライブラリに自動で追加されます。
+5. シンボルエディタのライブラリ設定でシンボルライブラリ(.kicad_sym)を登録します(グローバルでもプロジェクトでも構いません)。
+6. フットプリントエディタのライブラリ設定でフットプリントライブラリ(.pretty)を登録します(同上)。3Dモデルは3のパス設定が正しければ、自動で表示されます。
 
 ---
 
@@ -76,20 +67,11 @@ This step is essential because 3D model paths are set via environment variables.
 1. Click the Chrome Extension icon and open the settings.
 2. Set the "Output Directory" and "Library Name" in the settings screen.
 3. In KiCad's Path configuration, add the output path and library name. After selecting the folder, don't forget to add a backslash (`\`) at the end.
-4. Export any item you plan to use; this will create a new library.
-5. Register the symbol library (`.kicad_sym`) in the Symbol Editor's library settings (either Global or Project).
-6. Register the footprint library (`.pretty`) in the Footprint Editor's library settings (same as above). 3D models will be displayed automatically if the path settings in step 3 are correct.
-
----
-
-## How to Use
-
-1. **Start the server**: Launch `EasyEDA2KiCad_Server.exe`.
-2. **Configure settings**: Click the extension icon and set the "Output Directory" and "Library Name". Note that if you set a library name that already exists in the directory, components will be added to that existing library.
-3. **Export components**:
+4. Launch EasyEDA2KiCad_Server.exe. Export any item you plan to use; this will create a new library.
     - Open a product detail page on [JLCPCB](https://jlcpcb.com/) or [LCSC](https://www.lcsc.com/), and an **Export to KiCad** button will appear.
     - On search result pages, download icons (⬇) will appear next to each part number.
-4. **Updating the Library**: Components are automatically added to the library.
+5. Register the symbol library (`.kicad_sym`) in the Symbol Editor's library settings (either Global or Project).
+6. Register the footprint library (`.pretty`) in the Footprint Editor's library settings (same as above). 3D models will be displayed automatically if the path settings in step 3 are correct.
 
 ---
 
