@@ -1,6 +1,6 @@
 # EasyEDA2KiCad Chrome Extension
 
-**JLCPCB** や **LCSC** のパーツページから、電子部品を直接 **KiCad** ライブラリ（シンボル、フットプリント、3Dモデル）にエクスポートするChrome拡張機能です。
+**JLCPCB** や **LCSC** のパーツページから、部品のEasyEDAファイルをKicad用に変換し、直接 **KiCad** ライブラリ（シンボル、フットプリント、3Dモデル）に追加するChrome拡張機能です。
 
 このプロジェクトは [uPesy/easyeda2kicad.py](https://github.com/uPesy/easyeda2kicad.py) をベースにしています。Chrome 拡張機能とローカルサーバーの連携で、部品検索からKiCadライブラリへの反映までが最短で行えます。
 
@@ -12,7 +12,7 @@
 ## インストール方法
 
 ### 1. ローカルサーバー
-1. [リリーズページ](https://github.com/minolabo/EasyEDA2KiCad-Chrome-Extension/releases)から最新の `EasyEDA2KiCad_Server.exe` をダウンロードします。
+1. [こちら](https://github.com/minolabo/EasyEDA2KiCad-Chrome-Extension/releases)から最新の `EasyEDA2KiCad_Server.exe` をダウンロードします。
 2. ダウンロードした EXE ファイルを実行します（セキュリティ警告が表示された場合はアクセスを許可してください）。
 3. サーバーが起動すると、黒い画面が表示されます。ライブラリに部品を追加する作業中はこの画面を閉じないでください。
 
