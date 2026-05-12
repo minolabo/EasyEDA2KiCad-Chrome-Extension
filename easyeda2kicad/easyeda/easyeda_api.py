@@ -19,20 +19,28 @@ class EasyedaApi:
             "Accept-Encoding": "gzip, deflate",
             "Accept": "application/json, text/javascript, */*; q=0.01",
             "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-            "User-Agent": f"easyeda2kicad v{__version__}",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
         }
 
     def get_info_from_easyeda_api(self, lcsc_id: str) -> dict:
-        r = requests.get(url=API_ENDPOINT.format(lcsc_id=lcsc_id), headers=self.headers)
-        api_response = r.json()
+        try:
+            r = requests.get(url=API_ENDPOINT.format(lcsc_id=lcsc_id), headers=self.headers)
+            if r.status_code != requests.codes.ok:
+                logging.error(f"EasyEDA API returned status code {r.status_code} for {lcsc_id}")
+                return {}
+            
+            api_response = r.json()
+        except Exception as e:
+            logging.error(f"Failed to fetch or parse EasyEDA API response for {lcsc_id}: {e}")
+            return {}
 
         if not api_response or (
-            "code" in api_response and api_response["success"] is False
+            "code" in api_response and api_response.get("success") is False
         ):
             logging.debug(f"{api_response}")
             return {}
 
-        return r.json()
+        return api_response
 
     def get_cad_data_of_component(self, lcsc_id: str) -> dict:
         cp_cad_info = self.get_info_from_easyeda_api(lcsc_id=lcsc_id)
